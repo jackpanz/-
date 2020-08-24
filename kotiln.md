@@ -1,3 +1,17 @@
+# 属性
 ```kotiln
-bash <(curl -L -s https://raw.githubusercontent.com/jackpanz/a-key-installation/master/centos7-jdk8-tomcat9.sh)
+val attr: Int = 0
+//getter setter
+val attr: Int = 0
+    get() {
+        println("---get---")
+        return field
+    }
+    set(value) {
+        println("---set---")
+    }
+//属性继承
+open val attr: Int = 1
+override val attr: Int = 2
 ```
+
