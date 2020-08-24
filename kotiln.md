@@ -38,7 +38,8 @@ class AA:A{
  init{
   println("init")
  }
- constructor(){
+ //私有的构造方法
+ private constructor(){
  }
  //可以调用父类的构造方法
  constructor(param:String):super(){
