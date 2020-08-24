@@ -1,3 +1,32 @@
+# kotlin基本数据类型
+```kotiln
+Double  64
+Float	32
+Long    64
+Int     32
+Short	16
+Byte    8
+```
+
+# 静态变量或常量
+```kotiln
+class A {
+    companion object {
+        //静态变量 可以改变
+        var URL1: String = "URL1"
+        //常量
+        val URL2: String = "URL2"
+        //常量 相当于加了private和get方法取值
+        const val URL3: String = "URL3"
+        //常量 懒加载
+        val URL4: String by lazy {
+            var value:String = URL2 + URL3
+            value
+        }
+    }
+}
+```
+
 # 属性
 ```kotiln
 val attr: Int = 0
