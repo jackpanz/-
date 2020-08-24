@@ -32,6 +32,22 @@ class A (){
  }
 }
 ```
+## 多个构造方法
+```kotiln
+class AA:A{
+ init{
+  println("init")
+ }
+ constructor(){
+ }
+ //可以调用父类的构造方法
+ constructor(param:String):super(){
+ }
+ //可以调用本类的其他构造方法
+ constructor(param1:String,param2:String):this(param1){
+ }
+}
+```
 
 
 
