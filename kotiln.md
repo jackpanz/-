@@ -7,6 +7,57 @@ Int     32
 Short	16
 Byte    8
 ```
+# 类声明
+```kotiln
+class A {
+
+}
+//可继承的类
+open class A {
+    //可继承的方法
+    open fun v() {}
+    //可继承的属性
+    open val attr: Int = 1
+}
+```
+
+# 类构造方法
+```kotiln
+//相当于constructor(param:String)
+class A (param:String){
+ //主构造函数
+ init{
+  println("init")
+  println("param:"+param)
+ }
+}
+class A (){
+//主构造函数
+ init{
+  println("init")
+ }
+ //副构造函数
+ constructor(){
+ }
+}
+```
+## 多个构造方法
+```kotiln
+class AA:A{
+ init{
+  println("init")
+ }
+ //私有的构造方法
+ private constructor(){
+ }
+ //可以调用父类的构造方法
+ constructor(param:String):super(){
+ }
+ //可以调用本类的其他构造方法
+ constructor(param1:String,param2:String):this(param1){
+ }
+}
+```
 
 # 静态变量或常量
 ```kotiln
@@ -44,41 +95,6 @@ open val attr: Int = 1
 override val attr: Int = 2
 //延迟加载 只能修饰,非kotlin基本类型
 lateinit val attr: String
-```
-
-# 类构造方法
-```kotiln
-//相当于constructor(param:String)
-class A (param:String){
- init{
-  println("init")
-  println("param:"+param)
- }
-}
-class A (){
- init{
-  println("init")
- }
- constructor(){
- }
-}
-```
-## 多个构造方法
-```kotiln
-class AA:A{
- init{
-  println("init")
- }
- //私有的构造方法
- private constructor(){
- }
- //可以调用父类的构造方法
- constructor(param:String):super(){
- }
- //可以调用本类的其他构造方法
- constructor(param1:String,param2:String):this(param1){
- }
-}
 ```
 
 
