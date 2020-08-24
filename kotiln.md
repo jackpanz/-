@@ -42,6 +42,8 @@ val attr: Int = 0
 //属性继承 open声明可继承，override声明继承属性
 open val attr: Int = 1
 override val attr: Int = 2
+//延迟加载 只能修饰,非kotlin基本类型
+lateinit val attr: String
 ```
 
 # 类构造方法
