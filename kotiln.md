@@ -20,8 +20,7 @@ open class A {
     open val attr: Int = 1
 }
 ```
-
-# 类构造方法
+### 类构造方法
 ```kotiln
 //相当于constructor(param:String)
 class A (param:String){
@@ -41,7 +40,7 @@ class A (){
  }
 }
 ```
-## 多个构造方法
+### 多个构造方法
 ```kotiln
 class AA:A{
  init{
@@ -58,27 +57,7 @@ class AA:A{
  }
 }
 ```
-
-# 静态变量或常量
-```kotiln
-class A {
-    companion object {
-        //静态变量 可以改变
-        var URL1: String = "URL1"
-        //常量
-        val URL2: String = "URL2"
-        //常量 相当于加了private和get方法取值
-        const val URL3: String = "URL3"
-        //常量 懒加载
-        val URL4: String by lazy {
-            var value:String = URL2 + URL3
-            value
-        }
-    }
-}
-```
-
-# 属性
+### 属性
 ```kotiln
 val attr: Int = 0
 //getter setter
@@ -95,6 +74,24 @@ open val attr: Int = 1
 override val attr: Int = 2
 //延迟加载 只能修饰,非kotlin基本类型
 lateinit val attr: String
+```
+### 静态变量或常量
+```kotiln
+class A {
+    companion object {
+        //静态变量 可以改变
+        var URL1: String = "URL1"
+        //常量
+        val URL2: String = "URL2"
+        //常量 相当于加了private和get方法取值
+        const val URL3: String = "URL3"
+        //常量 懒加载
+        val URL4: String by lazy {
+            var value:String = URL2 + URL3
+            value
+        }
+    }
+}
 ```
 
 # object 与companion object的区别
