@@ -122,3 +122,13 @@ fun main(args: Array<String>) {
     A.b.bFun();
 }
 ```
+
+# 判斷
+//判斷字符是否相等
+```kotiln
+str1 == str2
+str1.equals(str2, false)
+//不區分大小寫
+str1.equals(str2, true)
+```
+
