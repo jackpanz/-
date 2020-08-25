@@ -132,3 +132,66 @@ str1.equals(str2, false)
 str1.equals(str2, true)
 ```
 
+# 循環
+```kotiln
+//循環index
+for (i in 1..4) print(i) // 打印结果为: "1234"
+for (i in 4 downTo 1) print(i)  // 打印结果为: "4321"
+for (i in 1..4 step 2) print(i) // 打印结果为: "13"
+for (i in 4 downTo 1 step 2) print(i) // 打印结果为: "42"
+for (i in 1 until 10) println(i) // i in [1, 10] 不包含 10
+
+//循環數組
+val array = arrayOf("苹果", "香蕉", "菠萝")
+for (i in array.indices) {
+    println(array[i])
+}
+for ( i in 0 .. array.lastIndex ) {
+    println("" + i + ":" + array[i])
+}
+for ( i in array.lastIndex downTo 0 ) {//倒敘循環
+    println("" + i + ":" + array[i])
+}
+
+//循環list
+val items = listOf("apple", "banana", "kiwi")
+for (item in items) {
+    println(item)
+}
+for (index in items.indices) {
+    println("item at $index is ${items[index]}")
+}
+items.forEach { item ->
+    println(item)
+}
+for ( i in items.lastIndex downTo 0 ) {//倒敘循環
+    println("" + i + ":" + items[i])
+}
+
+//循環map
+var map = mapOf<String, Int>("Java" to 86, "Kotlin" to 92, "Go" to 78)
+for ((key, value) in map) {
+    println(key + ":" + value)
+}
+map.forEach { key, value ->
+    println(key + ":" + value)
+}
+var iterator = map.keys.iterator();
+while (iterator.hasNext()) {
+    var key = iterator.next();
+    var value = map.get(key);
+    println(key + ":" + value)
+}
+
+//循環字符串
+var str = "1234567"
+for(i in str.indices){
+    println(str[i])
+}
+for ( i in 0 .. str.lastIndex ) {
+    println("" + i + ":" + str[i])
+}
+for ( i in str.lastIndex downTo 0 ) {//倒敘循環字符串
+    println("" + i + ":" + str[i])
+}
+```
