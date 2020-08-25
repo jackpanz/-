@@ -97,5 +97,31 @@ override val attr: Int = 2
 lateinit val attr: String
 ```
 
-
-
+# object 与companion object的区别
+### companion object 為此class靜態方法或靜態變量的聲明
+### object 直接聲明為全局的靜態類
+```kotiln
+object A {
+    fun aFun() {
+    }
+}
+fun main(args: Array<String>) {
+  A.aFun();
+}
+```
+### object 在class裡聲明為此類內部靜態對象，為單例模式
+```kotiln
+open class B{
+    fun bFun(){}
+}
+class A {
+    object b:B();
+    object c {
+        fun cFun() {}
+    }
+}
+fun main(args: Array<String>) {
+    A.c.cFun();
+    A.b.bFun();
+}
+```
