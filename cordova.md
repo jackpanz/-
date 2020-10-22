@@ -1,11 +1,11 @@
 创建 插件流程
 
 定义
-``` java
+``` batch
 plugin_id		= com-example-myplugins
 plugin_name		= MyPlugins
 class 			= com.example.MyPlugins
-//android 插件拷贝路径
+#android 插件拷贝路径
 android-target-dir 	= src/com/example/
 ```
 
@@ -63,6 +63,6 @@ package.json
 
 添加到项目
 ```
-cordova plugin add D:\project\android\dsej\cordova-plugins\DsejUtils
+cordova plugin add D:\project\android\dsej\cordova-plugins\MyPlugins
 ```
 
