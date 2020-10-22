@@ -8,11 +8,11 @@ plugin_id		= com-example-myplugins
 plugin_name		= MyPlugins
 #android 对应的class
 class 			= com.example.MyPlugins
-#android 插件拷贝路径
+#拷贝到android工程目标路径
 android-target-dir 	= src/com/example/
 ```
 
-### 创建插件（根据设定替换替换 plugin_name 、plugin_id ）
+### 创建插件（根据设定替换 plugin_name 、plugin_id ）
 ```
 plugman create --name plugin_name --plugin_id plugin_id --plugin_version 0.0.1
 ```
@@ -22,7 +22,7 @@ plugman create --name plugin_name --plugin_id plugin_id --plugin_version 0.0.1
 plugman platform add --platform_name android
 ```
 
-### 修改 plugin.xml（根据设定替换替换 ${plugin_id}、${plugin_name} 、${class} 、{android-target-dir}）
+### 修改 plugin.xml（根据设定替换 ${plugin_id}、${plugin_name} 、${class} 、{android-target-dir}）
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
 <plugin	xmlns="http://apache.org/cordova/ns/plugins/1.0" 
@@ -45,7 +45,7 @@ plugman platform add --platform_name android
 </plugin>
 ```
 
-### 添加 package.json（根据设定替换替换 ${plugin_id}、${plugin_name} ）
+### 添加 package.json（根据设定替换 ${plugin_id}、${plugin_name} ）
 ``` json 
 {
   "name": "${plugin_name}",
