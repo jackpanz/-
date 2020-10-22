@@ -1,6 +1,6 @@
-创建 插件流程
+## 创建 插件流程
 
-定义
+### 定义
 ``` batch
 plugin_id		= com-example-myplugins
 plugin_name		= MyPlugins
@@ -9,18 +9,17 @@ class 			= com.example.MyPlugins
 android-target-dir 	= src/com/example/
 ```
 
-创建插件
+### 创建插件
 ```
 plugman create --name plugin_name --plugin_id plugin_id --plugin_version 0.0.1
 ```
 
-添加支持android
+### 添加支持android
 ```
 plugman platform add --platform_name android
 ```
 
-修改
-plugin.xml
+### 修改 plugin.xml
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
 <plugin	xmlns="http://apache.org/cordova/ns/plugins/1.0" 
@@ -43,8 +42,7 @@ plugin.xml
 </plugin>
 ```
 
-添加
-package.json
+### 添加 package.json
 ``` json 
 {
   "name": "${plugin_name}",
@@ -61,7 +59,7 @@ package.json
 }
 ```
 
-添加到项目
+### 添加到项目
 ```
 cordova plugin add D:\project\android\dsej\cordova-plugins\MyPlugins
 ```
