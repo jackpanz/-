@@ -1,9 +1,12 @@
 ## 创建 插件流程
 
-### 设定一些参数
+### 首先设定一些参数
 ``` batch
+#插件ID
 plugin_id		= com-example-myplugins
+#插件名称
 plugin_name		= MyPlugins
+#android 对应的class
 class 			= com.example.MyPlugins
 #android 插件拷贝路径
 android-target-dir 	= src/com/example/
@@ -14,7 +17,7 @@ android-target-dir 	= src/com/example/
 plugman create --name plugin_name --plugin_id plugin_id --plugin_version 0.0.1
 ```
 
-### cd进入插件目录添加android支持
+### 进入插件目录,添加android支持
 ```
 plugman platform add --platform_name android
 ```
