@@ -1,10 +1,10 @@
 创建 插件流程
 
 定义
-```
-plugin_id			= com-example-myplugins
-plugin_name			= MyPlugins
-class 				= com.example.MyPlugins
+``` java
+plugin_id		= com-example-myplugins
+plugin_name		= MyPlugins
+class 			= com.example.MyPlugins
 //android 插件拷贝路径
 android-target-dir 	= src/com/example/
 ```
@@ -21,13 +21,12 @@ plugman platform add --platform_name android
 
 修改
 plugin.xml
-```xml
+``` xml
 <?xml version="1.0" encoding="utf-8"?>
-<plugin 
-		xmlns="http://apache.org/cordova/ns/plugins/1.0" 
-		xmlns:android="http://schemas.android.com/apk/res/android" 
-		id="${plugin_id}" 
-		version="0.0.1">  
+<plugin	xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+	xmlns:android="http://schemas.android.com/apk/res/android" 
+	id="${plugin_id}" 
+	version="0.0.1"	>  
   <name>${plugin_name}</name>  
   <js-module name="${plugin_name}" src="www/${plugin_name}.js"> 
     <clobbers target="cordova.plugins.${plugin_name}"/> 
@@ -46,7 +45,7 @@ plugin.xml
 
 添加
 package.json
-```json 
+``` json 
 {
   "name": "${plugin_name}",
   "version": "1.0.0",
