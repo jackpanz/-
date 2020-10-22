@@ -13,12 +13,12 @@ android-target-dir 	= src/com/example/
 ```
 
 ### 创建插件（根据设定替换 plugin_name 、plugin_id ）
-```
+``` batch
 plugman create --name plugin_name --plugin_id plugin_id --plugin_version 0.0.1
 ```
 
 ### 进入插件目录,添加android支持
-```
+``` batch
 plugman platform add --platform_name android
 ```
 
@@ -63,7 +63,7 @@ plugman platform add --platform_name android
 ```
 
 ### 回到cordova根目录添加自定义控件
-```
+``` batch
 cordova plugin add D:\project\android\dsej\cordova-plugins\MyPlugins
 ```
 
