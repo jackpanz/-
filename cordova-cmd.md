@@ -9,10 +9,10 @@ cordova platform add android
 cordova plugin list
 
 #添加插件
-cordova plugin remove plugin_name
+cordova plugin add plugin_name
 
 #删除插件
-cordova plugin add plugin_name
+cordova plugin remove plugin_name
 
 #查看平台支持
 cordova platforms list
