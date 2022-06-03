@@ -1,16 +1,16 @@
 # 启动命令
 ```shell
-./etc/init.d/srs start
+/srs/trunk/etc/init.d/srs start
 ```
 
 # 停止
 ```shell
-./etc/init.d/srs stop
+/srs/trunk/etc/init.d/srs stop
 ```
 
 # 查看状态
 ```shell
-./etc/init.d/srs status
+/srs/trunk/etc/init.d/srs status
 ```
 
 # 推流地址
