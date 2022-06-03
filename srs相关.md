@@ -15,9 +15,10 @@
 
 # 推流地址
 ```shell
-rtmp://[ip]:[port]/live/[name]
+rtmp://[ip]:1935/live/[name]
 ```
+
 # 拉流地址
 ```shell
-rtmp://[ip]:[port]/live/[name]
+rtmp://[ip]/live/[name]
 ```
