@@ -32,6 +32,12 @@ docker images
 docker rmi [IMAGE ID]
 ```
 
+#### 镜像导出、导入
+```shell
+docker save ubuntu:latest > ubuntu.tar
+docker load < ubuntu.tar
+```
+
 #### 进入虚拟机命令行
 ```shell
 docker exec -it [CONTAINER ID] bash
