@@ -42,6 +42,8 @@ docker load -i jackpan_dragonwell8_v_8.11.12.tar
 ```shell
 docker exec -it [CONTAINER ID] bash
 ```
-安装 portainer
 
+#### 安装 portainer
+```shell
 docker run -d -p 8000:8000 -p 9000:9000 --name portainer --restart always -v \\.\pipe\docker_engine:\\.\pipe\docker_engine -v portainer_data:C:\docker\portainer\data\ portainer/portainer-ce:latest
+```
