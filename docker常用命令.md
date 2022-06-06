@@ -35,10 +35,13 @@ docker rmi [IMAGE ID]
 #### 镜像导出、导入
 ```shell
 docker save ubuntu:latest > ubuntu.tar
-docker load < ubuntu.tar
+docker load -i jackpan_dragonwell8_v_8.11.12.tar
 ```
 
 #### 进入虚拟机命令行
 ```shell
 docker exec -it [CONTAINER ID] bash
 ```
+安装 portainer
+
+docker run -d -p 8000:8000 -p 9000:9000 --name portainer --restart always -v \\.\pipe\docker_engine:\\.\pipe\docker_engine -v portainer_data:C:\docker\portainer\data\ portainer/portainer-ce:latest
