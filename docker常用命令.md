@@ -56,4 +56,8 @@ docker run -d -p 8000:8000 -p 9000:9000 --name portainer --restart=always -v /va
 docker run -itd -v /host_mnt/d/docker/registry/:/var/lib/registry -p 5000:5000 --restart=always --name registry registry:latest
 ```
 
-docker run -d --name nginx-container -e TZ=UTC -p 80:80 -p 443:443 -v /host_mnt/d/docker/nginx/html:/var/www/html -v /host_mnt/d/docker/nginx/conf:/etc/nginx/templates/conf.template -v /host_mnt/d/docker/nginx/logs:/var/log/nginx/ -v /host_mnt/d/docker/nginx/ssl:/ssl/ ubuntu/nginx
+#### 安装 docker镜像创库安装
+```shell
+docker run -d -p 80:80 -p 443:443 -v /host_mnt/d/docker/nginx/conf/:/etc/nginx/conf.d/ -v /host_mnt/d/docker/nginx/logs/:/var/log/nginx/ --name nginx  nginx
+```
+
