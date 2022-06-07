@@ -51,13 +51,21 @@ docker exec -it [CONTAINER ID] bash
 docker run -d -p 8000:8000 -p 9000:9000 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /host_mnt/d/docker/portainer_data/:/data portainer/portainer-ce:latest
 ```
 
-#### 安装 私有库
+#### 安装 registry 私有库
 ```shell
 
 docker run -itd -v /host_mnt/d/docker/registry/:/var/lib/registry -p 5000:5000 --restart=always --name registry registry:latest
 
 #支持删除
 docker run -itd -v /host_mnt/d/docker/registry/:/var/lib/registry -p 5000:5000 --restart=always -e REGISTRY_STORAGE_DELETE_ENABLED="true" --name registry registry:latest
+
+#支持私有库UI
+docker run -p 8280:80 --name registry-ui `
+--link registry:registry `
+-e REGISTRY_URL="http://192.168.0.2:5000" `
+-e DELETE_IMAGES="true" `
+-e REGISTRY_TITLE="Registry" `
+-d joxit/docker-registry-ui:static
 
 ```
 
