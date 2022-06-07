@@ -10,7 +10,10 @@ docker build -t [镜像名称] [路径]
 
 #### 创建实例
 ```shell
+#centos
 docker run -d -p 8080:8080 --net=host -v /usr/local/dorker/schedule/logs/:/usr/local/dorker/schedule/logs/ --name tg_schedule schedule
+#window
+docker run -d -p 8080:8080 --net=bridge -v /host_mnt/d/docker/schedule/logs/:/usr/local/dorker/schedule/logs/ --name tg_schedule schedule
 ```
 
 #### 启动、停止、删除实例
