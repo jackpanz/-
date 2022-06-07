@@ -50,3 +50,8 @@ docker exec -it [CONTAINER ID] bash
 ```shell
 docker run -d -p 8000:8000 -p 9000:9000 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /host_mnt/d/docker/portainer_data/:/data portainer/portainer-ce:latest
 ```
+
+#### 安装 docker镜像创库安装
+```shell
+docker run -itd -v /host_mnt/d/docker/registry/:/var/lib/registry -p 5000:5000 --restart=always --name registry registry:latest
+```
