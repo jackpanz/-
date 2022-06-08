@@ -82,13 +82,14 @@ docker run -d -p 80:80 -p 443:443 `
 -v /host_mnt/d/docker/nginx/conf/:/etc/nginx/conf.d/ `
 -v /host_mnt/d/docker/nginx/logs/:/var/log/nginx/ `
 --name nginx nginx
+```
 
+#### 安装 tengine
+```shell
 docker run -d -p 80:80 -p 443:443 `
 -e TZ=Asia/Shanghai `
 -v /host_mnt/d/docker/nginx/logs/:/var/log/nginx/ `
 -v /host_mnt/d/docker/nginx/nginx.conf:/etc/nginx/nginx.conf `
 -v /host_mnt/d/docker/nginx/conf/:/etc/nginx/conf.d/ `
 --name tengine infralibrary/tengine
-
 ```
-
