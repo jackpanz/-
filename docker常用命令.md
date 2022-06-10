@@ -59,6 +59,13 @@ docker run -itd -p 5000:5000 --restart=always `
 -v /host_mnt/d/docker/registry/:/var/lib/registry `
 -e REGISTRY_STORAGE_DELETE_ENABLED="true" `
 --name registry registry:latest
+
+#自定义配置
+docker run -itd -p 5000:5000 --restart=always `
+-v /host_mnt/d/docker/registry/:/var/lib/registry `
+-v /host_mnt/d/docker/registry/config.yml:/etc/docker/registry/config.yml `
+-e REGISTRY_STORAGE_DELETE_ENABLED="true" `
+--name registry registry:latest
 ```
 
 ### 安装私有库UI docker-registry-ui
