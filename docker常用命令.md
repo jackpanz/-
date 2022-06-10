@@ -58,13 +58,11 @@ docker run -d -p 8000:8000 -p 9000:9000 --restart=always `
 docker run -itd -p 5000:5000 --restart=always `
 -v /host_mnt/d/docker/registry/:/var/lib/registry `
 -v /host_mnt/d/docker/registry/config.yml:/etc/docker/registry/config.yml `
+-e REGISTRY_STORAGE_DELETE_ENABLED="true" `
 --name registry registry:latest
 
-# 支持删除
-docker run -itd -p 5000:5000 --restart=always `
--v /host_mnt/d/docker/registry/:/var/lib/registry `
--e REGISTRY_STORAGE_DELETE_ENABLED="true" `
---name registry registry:lates
+# [-e REGISTRY_STORAGE_DELETE_ENABLED="true" `]是支持删除
+# 需要在/etc/docker/registry/config.yml的http - headers子项中加上 Access-Control-Allow-Origin: ['*'] ,否则docker-registry-ui无法正常访问(Access-Control-Allow-Origin错误)。
 
 # 支持私有库UI
 docker run -p 8280:80 --name registry-ui `
