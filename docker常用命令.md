@@ -61,7 +61,7 @@ docker run -itd -p 5000:5000 --restart=always `
 --name registry registry:latest
 ```
 
-### 安装私有库 UI
+### 安装私有库UI docker-registry-ui
 * 要么安装joxit/docker-registry-ui:static版本
 * 安装最新版本joxit/docker-registry-ui:latest,需要修改registry容器的/etc/docker/registry/config.yml文件<br/>
 在http: headers: 下加上 Access-Control-Allow-Origin: ['*'],否则会报Access-control-allow-origin错误
