@@ -1,50 +1,50 @@
-#### 启动docker服务
+## 启动docker服务
 ```shell
 systemctl start docker
 ```
 
-#### 创建镜像
+## 创建镜像
 ```shell
 docker build -t [镜像名称:版本] [路径]
 ```
 
-#### 创建实例
+### 创建实例
 ```shell
 #centos
 docker run -d -p 8080:8080 -v /usr/local/dorker/schedule/logs/:/usr/local/dorker/schedule/logs/ --name tg_schedule schedule
 ```
 
-#### 启动、停止、删除实例
+### 启动、停止、删除实例
 ```shell
 docker start [NAMES]
 docker stop [NAMES]
 docker rm -f [NAMES]
 ```
 
-#### 查看运行实例、查看所有实例
+### 查看运行实例、查看所有实例
 ```shell
 docker ps
 docker ps -a
 ```
 
-#### 查看所有镜像、删除镜像
+### 查看所有镜像、删除镜像
 ```shell
 docker images
 docker rmi [IMAGE ID]
 ```
 
-#### 镜像导出、导入
+### 镜像导出、导入
 ```shell
 docker save ubuntu:latest > ubuntu.tar
 docker load -i jackpan_dragonwell8_v_8.11.12.tar
 ```
 
-#### 进入虚拟机命令行
+### 进入虚拟机命令行
 ```shell
 docker exec -it [CONTAINER ID] bash
 ```
 
-#### 安装 portainer
+### 安装 portainer
 ```shell
 docker run -d -p 8000:8000 -p 9000:9000 --restart=always `
 -v /var/run/docker.sock:/var/run/docker.sock `
@@ -52,9 +52,11 @@ docker run -d -p 8000:8000 -p 9000:9000 --restart=always `
 --name portainer portainer/portainer-ce:latest
 ```
 
-#### 安装 registry 私有库
-##### [-e REGISTRY_STORAGE_DELETE_ENABLED="true" `]是支持删除
-##### 需要在/etc/docker/registry/config.yml的http - headers子项中加上 Access-Control-Allow-Origin: ['*'] ,否则docker-registry-ui无法正常访问(Access-Control-Allow-Origin错误)。
+### 安装 registry 私有库
+* -e REGISTRY_STORAGE_DELETE_ENABLED="true" 是支持删除
+* 安装docker-registry-ui，需要在registry容器中修改 /etc/docker/registry/config.yml文件。<br/>
+在config.yml中http header子项里加上 Access-Control-Allow-Origin: ['*']。<br/>
+否则ui无法正常访问(Access-Control-Allow-Origin错误)。
 ```shell
 
 docker run -itd -p 5000:5000 --restart=always `
