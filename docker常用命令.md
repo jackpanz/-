@@ -54,22 +54,31 @@ docker run -d -p 8000:8000 -p 9000:9000 --restart=always `
 
 ### 安装 registry 私有库
 * -e REGISTRY_STORAGE_DELETE_ENABLED="true" 是支持删除
-* docker-registry-ui要么选择joxit/docker-registry-ui:static版本，最新版本需要ui库和registry访问路径要在一个域名下,端口最好一样，不是会报(Access-Control-Allow-Origin错误)。<br/>
-test.com -> docker-registry-ui<br/>
-test.com/v2/ -> registry<br/>
-docker-registry-ui REGISTRY_URL="test.com"
-
-
 ```shell
 docker run -itd -p 5000:5000 --restart=always `
 -v /host_mnt/d/docker/registry/:/var/lib/registry `
 -e REGISTRY_STORAGE_DELETE_ENABLED="true" `
 --name registry registry:latest
+```
 
-# 私有库UI
+### 安装私有库 UI
+* 要么选择joxit/docker-registry-ui:static版本安装
+* 安装最新版本joxit/docker-registry-ui:latest,需要修改registry容器的/etc/docker/registry/config.yml文件<br/>
+在http: headers: 下加上 Access-Control-Allow-Origin: ['*'],否则会报Access-control-allow-origin错误
+
+```shell
+# static版本
 docker run -p 8280:80 --name registry-ui `
 --link registry:registry `
--e REGISTRY_URL="https://jackpan.ga" `
+-e REGISTRY_URL="http://192.168.0.2:5000" `
+-e DELETE_IMAGES="true" `
+-e REGISTRY_TITLE="Registry" `
+-d joxit/docker-registry-ui:static
+
+# latest版本
+docker run -p 8280:80 --name registry-ui `
+--link registry:registry `
+-e REGISTRY_URL="http://192.168.0.2:5000" `
 -e DELETE_IMAGES="true" `
 -e REGISTRY_TITLE="Registry" `
 -d joxit/docker-registry-ui:latest
