@@ -103,6 +103,16 @@ docker run -d -p 80:80 -p 443:443 `
 
 #### 安装 tengine
 ```shell
+#linxu
+docker run -d -p 80:80 -p 443:443 \
+-e TZ=Asia/Shanghai \
+-v /home/nginx/logs/:/var/log/nginx/ \
+-v /home/nginx/nginx.conf:/etc/nginx/nginx.conf \
+-v /home/nginx/conf/:/etc/nginx/conf.d/ \
+-v /home/nginx/html/:/etc/nginx/html/ \
+--name tengine infralibrary/tengine
+
+#window
 docker run -d -p 80:80 -p 443:443 `
 -e TZ=Asia/Shanghai `
 -v /host_mnt/d/docker/nginx/logs/:/var/log/nginx/ `
