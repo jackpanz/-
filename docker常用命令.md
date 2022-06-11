@@ -46,10 +46,21 @@ docker exec -it [CONTAINER ID] bash
 
 ### 安装 portainer
 ```shell
+
+docker volume create portainer_data
+
+#linux
+docker run -d -p 8000:8000 -p 9000:9000 --restart=always \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v portainer_data:/data \
+--name portainer portainer/portainer-ce:latest
+
+#window
 docker run -d -p 8000:8000 -p 9000:9000 --restart=always `
 -v /var/run/docker.sock:/var/run/docker.sock `
--v /host_mnt/d/docker/portainer_data/:/data `
+-v portainer_data:/data `
 --name portainer portainer/portainer-ce:latest
+
 ```
 
 ### 安装 registry 私有库
