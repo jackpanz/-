@@ -100,6 +100,16 @@ docker run -itd -p 5000:5000 --restart=always `
 在http: headers: 下加上 Access-Control-Allow-Origin: ['*'],否则会报Access-control-allow-origin错误
 
 ```shell
+
+# linux
+# latest版本
+docker run -p 8280:80 --name registry-ui \
+--link registry:registry \
+-e REGISTRY_URL="http://192.168.0.6:5000" \
+-e DELETE_IMAGES="true" \
+-e REGISTRY_TITLE="Registry" \
+-d joxit/docker-registry-ui:latest
+
 # static版本
 docker run -p 8280:80 --name registry-ui `
 --link registry:registry `
