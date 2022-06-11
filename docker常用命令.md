@@ -66,6 +66,21 @@ docker run -d -p 8000:8000 -p 9000:9000 --restart=always `
 ### 安装 registry 私有库
 * -e REGISTRY_STORAGE_DELETE_ENABLED="true" 是支持删除
 ```shell
+
+#linxu 
+docker run -itd -p 5000:5000 --restart=always \
+-v /host_mnt/d/docker/registry/:/var/lib/registry \
+-e REGISTRY_STORAGE_DELETE_ENABLED="true" \
+--name registry registry:latest
+
+#自定义配置
+docker run -itd -p 5000:5000 --restart=always \
+-v /home/registry/:/var/lib/registry \
+-v /home/registry/config.yml:/etc/docker/registry/config.yml \
+-e REGISTRY_STORAGE_DELETE_ENABLED="true" \
+--name registry registry:latest
+
+#window
 docker run -itd -p 5000:5000 --restart=always `
 -v /host_mnt/d/docker/registry/:/var/lib/registry `
 -e REGISTRY_STORAGE_DELETE_ENABLED="true" `
