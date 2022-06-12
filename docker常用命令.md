@@ -159,7 +159,7 @@ docker run -d -p 80:80 -p 443:443 `
 
 #### 安装 tengine
 ```shell
-docker run -d -p 27017:27017 --auth \      
+docker run -d -p 27017:27017 \      
 -v mongo-data:/home/mongo/data/ \         
---name mongo mongo:latest
+--name mongo mongo:latest --auth
 ```
