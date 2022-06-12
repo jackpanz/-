@@ -156,3 +156,10 @@ docker run -d -p 80:80 -p 443:443 `
 -v /host_mnt/d/docker/nginx/html/:/etc/nginx/html/ `
 --name tengine infralibrary/tengine
 ```
+
+#### 安装 tengine
+```shell
+docker run -d -p 27017:27017 --auth \      
+-v mongo-data:/home/mongo/data/ \         
+--name mongo mongo:latest
+```
