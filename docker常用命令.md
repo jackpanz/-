@@ -128,7 +128,6 @@ docker run -p 8280:80 --name registry-ui `
 ```
 
 #### 安装 nginx
-* 
 ```shell
 docker run -d -p 80:80 -p 443:443 `
 -e TZ=Asia/Shanghai `
