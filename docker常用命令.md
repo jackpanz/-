@@ -129,6 +129,7 @@ docker run -p 8280:80 --name registry-ui `
 
 #### 安装 nginx
 ```shell
+#window
 docker run -d -p 80:80 -p 443:443 `
 -e TZ=Asia/Shanghai `
 -v /host_mnt/d/docker/nginx/conf/:/etc/nginx/conf.d/ `
@@ -157,8 +158,9 @@ docker run -d -p 80:80 -p 443:443 `
 --name tengine infralibrary/tengine
 ```
 
-#### 安装 tengine
+#### 安装 mongodb
 ```shell
+#linxu
 docker run -d -p 27017:27017 \      
 -v mongo-data:/home/mongo/data/ \         
 --name mongo mongo:latest --auth
