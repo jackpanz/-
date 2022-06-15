@@ -78,16 +78,16 @@ db.student.insertMany(
 | &nbsp;        | &nbsp;        |
 | ------------- | ------------- |
 |查询条件|
-|等于|{<key>:<value>}
-|不等于|{<key>:{$ne:<value>}}
-|小于|{<key>:{$lt:<value>}}
-|小于或等于|{<key>:{$lte:<value>}}
-|大于|{<key>:{$gt:<value>}}
-|大于或等于|{<key>:{$gte:<value>}}
-|不等于|{<key>:{$ne:<value>}}
-|in|{<key>:{$in:[<value>,<value>,<value>,<value>]}}
-|not in|{<key>:{$nin:[<value>,<value>,<value>,<value>]}}
-|like|{<key>:/<value>/}	{<key>:/^<value>/}	{<key>:/<value>^/}
+|等于|{\<key\>:\<value\>}
+|不等于|{\<key\>:{$ne:\<value\>}}
+|小于|{\<key\>:{$lt:\<value\>}}
+|小于或等于|{\<key\>:{$lte:\<value\>}}
+|大于|{\<key>:{$gt:\<value\>}}
+|大于或等于|{\<key\>:{$gte:\<value\>}}
+|不等于|{\<key\>:{$ne:\<value\>}}
+|in|{\<key\>:{$in:[\<value\>,\<value\>\<value\>,\<value\>]}}
+|not in|{\<key\>:{$nin:[\<value\>,\<value\>,\<value\>,\<value\>]}}
+|like|{\<key>:\/\<value\>\/}<br/>{\<key\>:\/\^\<value\>\/}<br/>{\<key\>:\/\<value\>\^\/}
 |&nbsp;|&nbsp;
 |只显示某些字段|find({},{name:1,age:1})
 |不显示某些字段|find({},{name:0})
