@@ -28,6 +28,8 @@ db.updateUser("admin", {
 		db: "dzswjdbtar"
 	}]
 });
+
+db.auth("admin","admin") 
 ~~~
 
 * 数据库用户角色：read、readWrite; 
