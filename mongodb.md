@@ -29,7 +29,7 @@ db.updateUser("admin", {
 	}]
 });
 
-db.auth("admin","admin") 
+db.auth("admin","admin");
 ~~~
 
 * 数据库用户角色：read、readWrite; 
