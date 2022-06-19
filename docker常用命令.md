@@ -162,6 +162,7 @@ docker run -d -p 80:80 -p 443:443 `
 ```shell
 #linxu
 docker run -d -p 27017:27017 \      
--v mongo-data:/home/mongo/data/ \         
+-v /home/mongo/data/:/data/db/ \   
+-v /home/mongo/mongo.conf:/etc/mongo.conf \
 --name mongo mongo:latest --auth
 ```
