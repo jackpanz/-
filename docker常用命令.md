@@ -161,8 +161,8 @@ docker run -d -p 80:80 -p 443:443 `
 #### 安装 mongodb
 ```shell
 #linxu
-docker run -d -p 27017:27017 \      
--v /home/mongo/data/:/data/db/ \   
+docker run -d -p 27017:27017 \
+-v /home/mongo/data/:/data/db/ \
 -v /home/mongo/mongo.conf:/etc/mongo.conf \
 -v /home/mongo/logs/:/data/logs/ \
 --name mongo mongo:latest --auth
