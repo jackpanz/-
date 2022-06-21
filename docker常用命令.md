@@ -176,7 +176,7 @@ storage:
 systemLog:
   destination: file
   logAppend: true
-  path: /data/mongo.log    
+  path: /data/mongo.log
 net:
   port: 27017
   bindIp: 0.0.0.0
@@ -184,8 +184,8 @@ net:
 replication:
   replSetName: rs0  
 ```
-
-开启单节点分片，不能加参数--auth，在创建完用户后在开始auth。
+*** mongo.log必须要先创建，开启可读权限
+*** 开启单节点分片，不能加参数--auth，在创建完用户后在开始auth。
 BadValue: security.keyFile is required when authorization is enabled with replica sets
 
 ```sql
