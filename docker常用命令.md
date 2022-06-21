@@ -167,3 +167,19 @@ docker run -d -p 27017:27017 \
 -v /home/mongo/mongo.log:/data/mongo.log \
 --name mongo mongo:latest --config /etc/mongo.conf
 ```
+mongo.conf
+```yml
+storage:
+  dbPath: /data/db/
+  journal:
+    enabled: true
+systemLog:
+  destination: file
+  logAppend: true
+  path: /data/mongo.log    
+net:
+  port: 27017
+  bindIp: 0.0.0.0
+replication:
+  replSetName: rs0  
+```
