@@ -165,6 +165,35 @@ docker run -d -p 27017:27017 \
 -v /home/mongo/data/:/data/db/ \
 -v /home/mongo/mongo.conf:/etc/mongo.conf \
 -v /home/mongo/mongo.log:/data/mongo.log \
+--name mongo mongo:latest --config /etc/mongo.conf --auth
+```
+mongo.conf
+```yml
+storage:
+  dbPath: /data/db/
+  journal:
+    enabled: true
+systemLog:
+  destination: file
+  logAppend: true
+  path: /data/mongo.log
+net:
+  port: 27017
+  bindIp: 0.0.0.0
+```
+
+* mongo.log必须要先创建，开启可读权限
+
+#### mongodb开启单节点分片,事务支持
+* 开启单节点分片，不能先开启--auth，在创建完用户后在开启auth。报(BadValue: security.keyFile is required when authorization is enabled with replica sets)错误
+
+1.先创建mongodb容器。
+```shell
+#linxu
+docker run -d -p 27017:27017 \
+-v /home/mongo/data/:/data/db/ \
+-v /home/mongo/mongo.conf:/etc/mongo.conf \
+-v /home/mongo/mongo.log:/data/mongo.log \
 --name mongo mongo:latest --config /etc/mongo.conf
 ```
 mongo.conf
@@ -180,21 +209,35 @@ systemLog:
 net:
   port: 27017
   bindIp: 0.0.0.0
-#开启分片
+  #开启分片
 replication:
   replSetName: rs0  
 ```
-* mongo.log必须要先创建，开启可读权限
-* 开启单节点分片，不能先开启--auth，在创建完用户后在开启auth。
-BadValue: security.keyFile is required when authorization is enabled with replica sets
 
-```sql
-rs.initiate({_id:"rs0",members:[{_id:0,host:"127.0.0.1:27017",priority:1}]})
+2.在进入mongodb创建分片,在创建用户。
 ```
-
-进入mongo
-```shell
 docker exec -it mongo mongo admin
 
-docker exec -it mongo bash
-```  
+rs.initiate({_id:"rs0",members:[{_id:0,host:"127.0.0.1:27017",priority:1}]})
+
+use admin;
+
+db.createUser({
+	user: "admin",
+	pwd: "admin",
+	roles: [{
+		role: "root",
+		db: "admin"
+	}]
+})
+
+```
+
+3.停止docker服务。
+systemctl stop docker
+
+4.开启auth。
+进入 /var/lib/docker/containers/目录下找到对应的容器目录在进入，编辑config.v2.json
+
+5.启动docker服务
+systemctl start docker
