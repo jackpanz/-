@@ -180,6 +180,14 @@ systemLog:
 net:
   port: 27017
   bindIp: 0.0.0.0
+#开启分片
 replication:
   replSetName: rs0  
+```
+
+开启单节点分片，不能加参数--auth，在创建完用户后在开始auth。
+BadValue: security.keyFile is required when authorization is enabled with replica sets
+
+```sql
+rs.initiate({_id:"rs0",members:[{_id:0,host:"127.0.0.1:27017",priority:1}]})
 ```
