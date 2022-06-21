@@ -165,5 +165,5 @@ docker run -d -p 27017:27017 \
 -v /home/mongo/data/:/data/db/ \
 -v /home/mongo/mongo.conf:/etc/mongo.conf \
 -v /home/mongo/mongo.log:/data/mongo.log \
---name mongo mongo:latest --auth --config /etc/mongo.conf
+--name mongo mongo:latest --config /etc/mongo.conf
 ```
