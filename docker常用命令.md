@@ -194,6 +194,7 @@ docker run -d -p 27017:27017 \
 -v /home/mongo/data/:/data/db/ \
 -v /home/mongo/mongo.conf:/etc/mongo.conf \
 -v /home/mongo/mongo.log:/data/mongo.log \
+-v /home/mongo/keyfile.key:/data/keyfile.key \
 --name mongo mongo:latest --config /etc/mongo.conf
 ```
 mongo.conf
@@ -231,13 +232,4 @@ db.createUser({
 	}]
 })
 
-```
-
-3.停止docker服务。
-systemctl stop docker
-
-4.开启auth。
-进入 /var/lib/docker/containers/目录下找到对应的容器目录在进入，编辑config.v2.json
-
-5.启动docker服务
-systemctl start docker
+``
