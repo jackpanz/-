@@ -32,6 +32,12 @@ db.updateUser("admin", {
 db.auth("admin","admin");
 ~~~
 
+删除数据库
+db.dropDatabase() 
+
+删除表
+db.表名.drop()
+
 * 数据库用户角色：read、readWrite; 
 * 数据库管理角色：dbAdmin、dbOwner、userAdmin；
 * 集群管理角色：clusterAdmin、clusterManager、clusterMonitor、hostManager； 
