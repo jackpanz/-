@@ -33,10 +33,14 @@ db.auth("admin","admin");
 ~~~
 
 删除数据库
+~~~sql
 db.dropDatabase() 
+~~~
 
 删除表
+~~~sql
 db.表名.drop()
+~~~
 
 * 数据库用户角色：read、readWrite; 
 * 数据库管理角色：dbAdmin、dbOwner、userAdmin；
