@@ -106,7 +106,7 @@ db.student.insertMany(
 |只显示某些字段|find({},{name:1,age:1})
 |不显示某些字段|find({},{name:0})
 |&nbsp;|&nbsp;
-|排序|find({}.sort({age:1})<br/>find({}.sort({age:0})									
+|排序|find({}).sort({age:1})<br/>find({}.sort({age:0})									
 |&nbsp;|&nbsp;
 |limit|find().limit(5)
 |查询7条以后的数据|find().skip(7)
