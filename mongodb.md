@@ -30,6 +30,8 @@ db.updateUser("admin", {
 });
 
 db.auth("admin","admin");
+
+show users;
 ~~~
 
 删除数据库
