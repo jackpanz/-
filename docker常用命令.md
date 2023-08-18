@@ -232,7 +232,7 @@ db.createUser({
 	}]
 })
 
-``
+```
 
 #### 安装 mysql
 ```
@@ -246,6 +246,7 @@ docker run -p 3310:3306 --name mysql --restart=always --privileged=true \
 [mysqld]
 character-set-server=utf8
 collation-server=utf8_general_ci
-``
+
+```
 
 
