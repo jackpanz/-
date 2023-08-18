@@ -233,3 +233,19 @@ db.createUser({
 })
 
 ``
+
+#### 安装 mysql
+```
+docker run -p 3310:3306 --name mysql --restart=always --privileged=true \
+-v /Users/jackpan/devtools/mysql/mysql0/log:/var/log/mysql \
+-v /Users/jackpan/devtools/mysql/mysql0/data:/var/lib/mysql \
+-v /Users/jackpan/devtools/mysql/mysql0/conf:/etc/mysql/conf.d \
+-v /etc/localtime:/etc/localtime:ro \
+-e MYSQL_ROOT_PASSWORD=root -d mysql 
+
+[mysqld]
+character-set-server=utf8
+collation-server=utf8_general_ci
+``
+
+
